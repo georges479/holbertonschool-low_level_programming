@@ -2,7 +2,7 @@
 
 
 /**
-*main - is the entry point of a C program.
+*main - Entry points of the program
 *It's where the program starts executing.
 *When you run a C program, the operatind system calls the main function first.
 *Returne: Always 0.
