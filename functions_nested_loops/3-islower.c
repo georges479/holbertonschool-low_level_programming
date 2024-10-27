@@ -8,14 +8,29 @@
  *
  * @c parameter: checking c characters
  *
- * Return: 1 if char in lowercase, otherwise 0 if uppercase
+ * Return: Always 0.
  */
 int _islower(int c)
 {
-	if (c >= 'a' || c <= 'z')
-		return (1);
-	else
-		return (0);
+
+	c = _islower('I');
+	_putchar(c + '0');
+	c = _islower('a');
+	_putchar(c + '0');
+	c = _islower('s');
+	_putchar(c + '0');
+	c = _islower(70);
+	_putchar(c + '0');
+	c = _islower(20);
+	_putchar(c + '0');
+	c = _islower('U');
+	_putchar(c + '0');
+	c = _islower('n');
+	_putchar(c + '0');
+	c = _islower(0);
+	_putchar(c + '0');
+	c = _islower('H');
+	_putchar(c + '0');
+	_putchar('\n');
+	return (0);
 }
-
-
