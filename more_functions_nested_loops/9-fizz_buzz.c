@@ -30,7 +30,7 @@ int main(void)
 			}
 			if (u < 100)
 			{
-				printf(", ");
+				printf(" ");
 			}
 		}
 	}
