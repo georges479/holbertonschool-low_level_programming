@@ -12,18 +12,16 @@ void print_rev(char *s)
 
 	if (s == NULL)
 	return;
-
 	while (s[length] != '\0')
-		{
-			length++;
-		}
+	{
+		length++;
+	}
 	s += length - 1;
-
 	while (length > 0)
-		{
-			write(1, s, 1);
-			s--;
-			length--;
-		}
+	{
+		write(1, s, 1);
+		s--;
+		length--;
+	}
 	write(1, "\n", 1);
 }
