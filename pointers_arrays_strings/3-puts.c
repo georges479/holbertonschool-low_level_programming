@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+#include <unistd.h>
 
 
 /**
@@ -10,10 +10,11 @@ void _puts(char *str)
 {
 	if (str == NULL)
 	return;
+
 	while (*str != '\0')
 	{
-		putchar(*str);
+		write(1, str, 1);
 		str++;
 	}
-	putchar('\n');
+	write(1, "\n", 1);
 }
