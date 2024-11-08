@@ -1,13 +1,20 @@
 #include "main.h"
 #include <stdio.h>
 
+
+/**
+ * _puts_recursion - Affiche une chaîne de caractères suivi d'une nouvelle li
+ * @s: Pointeur vers la chai�e de caractère a afficher
+ *
+ * Return: Rien
+ */
 void _puts_recursion(char *s)
 {
-	int a;
-
-	for (a = 0; s[a] < '\0'; a++)
+	if (*s == '\0')
 	{
-		putchar(a);
+		putchar('\n');
+		return;
 	}
-	putchar('\n');
+	putchar(*s);
+	_puts_recursion(s + 1);
 }
