@@ -1,26 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
-*main - prints the multiplication
-*of two numbers
-*@argc: number of arguments
-*@argv: array of arguments
-*Return: returns 0
-*/
 
+
+/**
+*main - prints the addition of two numbers
+*@argc:  number of arguments
+*@argv: array of arguments
+*Return: returns 0 on success, 1 if it fails
+*/
 int main(int argc, char *argv[])
 {
-int i, j, mul;
-if (argc <= 2)
-{
-printf("Error\n");
-return (1);
-}
-i = atoi(argv[1]);
-j = atoi(argv[2]);
-mul = i *j;
+	int sum = 0;
+	int i, j;
 
-printf("%d\n", mul);
-return (0);
+	for (i = 1; i < argc; i++)
+	{
+		for (j = 0; argv[i][j] != 0; j++)
+		{
+			if (argv[i][j] < '0' && argv[i][j] > '9')
+			{
+				printf("Error\n");
+				return (1);
+			}
+		}
+		sum += atoi(argv[i]);
+	}
+	printf("%d\n", sum);
+	return (0);
 }
