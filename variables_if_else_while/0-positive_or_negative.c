@@ -3,7 +3,15 @@
 #include <time.h>
 /* more headers goes there */
 
-/* betty style doc for function main goes there */
+/**
+ * main - Entry point
+ *
+ * Description: This program generates a random integer,
+ * evaluates whether it is positive, zero, or negative, and
+ * prints the result to the standard output.
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 	int n;
