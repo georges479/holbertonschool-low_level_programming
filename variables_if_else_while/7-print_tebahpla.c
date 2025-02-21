@@ -6,13 +6,11 @@
  */
 int main(void)
 {
-    char z = 122;
-    char a = 61;
+    char alpha;
 
-    while (z > a)
+    for (alpha = 122; alpha >= 61; alpha--)
     {
-        z--;
-        putchar(z);
+        putchar(alpha);
     }
     putchar('\n');
     return (0);
