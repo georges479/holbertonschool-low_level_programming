@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-    char alpha = 122
+    char alpha = 122;
 
     while (alpha => 61)
     {
