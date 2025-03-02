@@ -17,24 +17,22 @@ int _atoi(char *s)
 	int result = 0;
 	int digit = 0;
 
-	while (s[i] == '\0')
+	while (s[i] != '\0')
 	{
 		if (s[i] == '-')
 		{
 			sign *= -1;
 		}
-		else if (s[i] == '+')
-		{
-			sign *= 1;
-		}
 
-		if (s[i] >= '0' && s[i] < '9')
+		if (s[i] >= '0' && s[i] <= '9')
 		{
 			digit = 1;
 			result = result * 10 + (s[i] - '0');
 		}
 		else if (digit == 1)
+		{
 			break;
+		}
 		i++;
 	}
 	return (result * sign);
