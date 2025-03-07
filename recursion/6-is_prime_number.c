@@ -1,65 +1,43 @@
 #include "main.h"
 
-/**
- * sqrt_int - calcule la racine carrée entière d'un nombre
- * @n: l'entier dont on veut la racine carrée
- *
- * Return: la racine carrée entière de n
- */
-int sqrt_int(int n)
-{
-	int i = 0;
-
-	while (i * i <= n)
-	{
-		if (i * i == n)
-		{
-			return (i);
-		}
-		i++;
-	}
-	return (i - 1);
-}
+int is_divisible(int num, int div);
+int is_prime_number(int n);
 
 /**
- * check_prime_recursive - vérifie récursivement si un nombre est premier
- * @n: l'entier à vérifier
- * @i: le diviseur actuel à tester
+ * is_divisible - Checks if a number is divisible.
+ * @num: The number to be checked.
+ * @div: The divisor.
  *
- * Return: 1 si le nombre est premier, sinon 0
+ * Return: If the number is divisible - 0.
+ *         If the number is not divisible - 1.
  */
-int check_prime_recursive(int n, int i)
+int is_divisible(int num, int div)
 {
-	if (i > sqrt_int(n))
-	{
-		return (1);
-	}
-	else if (n % i == 0)
-	{
+	if (num % div == 0)
 		return (0);
-	}
-	return (check_prime_recursive(n, i + 2));
+
+	if (div == num / 2)
+		return (1);
+
+	return (is_divisible(num, div + 1));
 }
 
 /**
- * is_prime_number - vérifie si un nombre est premier
- * @n: l'entier à vérifier
+ * is_prime_number - Checks if a number is prime.
+ * @n: The number to be checked.
  *
- * Return: 1 si le nombre est premier, sinon 0
+ * Return: If the integer is not prime - 0.
+ *         If the number is prime - 1.
  */
 int is_prime_number(int n)
 {
+	int div = 2;
+
 	if (n <= 1)
-	{
 		return (0);
-	}
-	else if (n == 2)
-	{
+
+	if (n >= 2 && n <= 3)
 		return (1);
-	}
-	if (n % 2 == 0)
-	{
-		return (0);
-	}
-	return (check_prime_recursive(n, 3));
+
+	return (is_divisible(n, div));
 }
