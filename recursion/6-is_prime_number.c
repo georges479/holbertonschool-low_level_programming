@@ -22,6 +22,26 @@ int sqrt_int(int n)
 }
 
 /**
+ * check_prime_recursive - vérifie récursivement si un nombre est premier
+ * @n: l'entier à vérifier
+ * @i: le diviseur actuel à tester
+ *
+ * Return: 1 si le nombre est premier, sinon 0
+ */
+int check_prime_recursive(int n, int i)
+{
+	if (i > sqrt_int(n))
+	{
+		return (1);
+	}
+	else if (n % i == 0)
+	{
+		return (0);
+	}
+	return (check_prime_recursive(n, i + 2));
+}
+
+/**
  * is_prime_number - vérifie si un nombre est premier
  * @n: l'entier à vérifier
  *
@@ -29,8 +49,6 @@ int sqrt_int(int n)
  */
 int is_prime_number(int n)
 {
-	int i, limit;
-
 	if (n <= 1)
 	{
 		return (0);
@@ -39,18 +57,9 @@ int is_prime_number(int n)
 	{
 		return (1);
 	}
-	else if (n % 2 == 0)
+	if (n % 2 == 0)
 	{
 		return (0);
 	}
-
-	limit = sqrt_int(n);
-	for (i = 3; i <= limit; i += 2)
-	{
-		if (n % i == 0)
-		{
-			return (0);
-		}
-	}
-	return (1);
+	return (check_prime_recursive(n, 3));
 }
