@@ -1,0 +1,1 @@
+_structure_typedef
